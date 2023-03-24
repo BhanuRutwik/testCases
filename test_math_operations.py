@@ -4,6 +4,7 @@ import pytest
 
 # Test math operations
 def test_add():
+    print("raghu")
     assert math_operations.add(2, 3) == 5
 
 def test_subtract():
@@ -15,15 +16,18 @@ def test_multiply():
 def test_divide():
     assert math_operations.divide(6, 3) == 2
 
+def test_divide_error():
     with pytest.raises(ValueError):
         math_operations.divide(6, 0)
 
 def test_power():
     assert math_operations.power(2, 3) == 8
 
+def test_power2():
+    assert math_operations.power(2,0) == 1
+
 def test_modulus():
     assert math_operations.modulus(7, 3) == 1
-
 
 # Test string operations
 def test_reverse_string():
@@ -37,8 +41,12 @@ def test_to_lowercase():
 
 def test_is_palindrome():
     assert string_operations.is_palindrome("racecar") == True
+    
+def test_not_palindrome():
     assert string_operations.is_palindrome("hello") == False
 
 def test_count_vowels():
-    assert string_operations.count_vowels("hello world") == 3
     assert string_operations.count_vowels("aeiou") == 5
+    
+def test_count_consonants():
+    assert len("hello world") - string_operations.count_vowels("hello world") == 8
