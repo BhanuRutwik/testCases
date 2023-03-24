@@ -1,7 +1,9 @@
 def add(x, y):
+    print("Addition operation")
     return x + y
 
 def subtract(x, y):
+    print("subtraction operation")
     return x - y
 
 def multiply(x, y):
